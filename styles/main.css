@@ -1,0 +1,31 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color: #a43e47ff;
+    height: 100vh;
+}
+
+.paintedCave {
+    width: 100%;
+    height: 100vh;
+    opacity: .2;
+    background-image: url('/media/paintedCave.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.splashLogo {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    min-width: 250px;
+    min-height: 250px;
+}
