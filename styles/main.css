@@ -19,6 +19,8 @@ body {
 
 .splash {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     top: 0px;
     bottom: 0px;
@@ -47,11 +49,10 @@ body {
 }
 
 .splashText {
-    font-size: calc(10px + 2vh);
-    color: #ffeeaaff;
+    font-size: calc(20px + 2vh);
     text-shadow: 2px 2px 4px #000000;
     font-family: 'bruntsfield', 'Times New Roman', Times, serif;
-    letter-spacing: .2em;
+    letter-spacing: .1em;
 }
 
 .joinBtn {
@@ -67,4 +68,9 @@ body {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+  .joinBtn:hover {
+      background-color: darkgreen;
+      color: #ffeeaaff;
   }
