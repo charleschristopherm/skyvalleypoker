@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-    background-color: #a43e47ff;
+    background-color: #a43e47;
     height: 100vh;
 }
 
@@ -72,5 +72,5 @@ body {
 
   .joinBtn:hover {
       background-color: darkgreen;
-      color: #ffeeaaff;
+      color: #ffeeaa;
   }
