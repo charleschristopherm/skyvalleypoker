@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+
+  $server = "http://18.222.90.127:8087";   // set your site url here
+  include "API.php";
+
+  if (isset($_POST["Login"]))
+  {
+    $player = $_POST["Player"];
+    $password = $_POST["Password"];
+    $params = array("Command" => "AccountsPassword", "Player" => $player, "PW" => $password);
+    $api = Poker_API($params);
+    if ($api -> Result != "Ok") die($api -> Error . "<br/>" . "Click Back Button to retry.");
+    if ($api -> Verified != "Yes") die("Password is incorrect. Click Back Button to retry.");
+    $params = array("Command" => "AccountsSessionKey", "Player" => $player);
+    $api = Poker_API($params);
+    if ($api -> Result != "Ok") die($api -> Error . "<br/>" . "Click Back Button to retry.");
+    $key = $api -> SessionKey;
+    $src = $server . "/?LoginName=" . $player . "&SessionKey=" . $key;
+    echo "<script>window.location.assign('$src')</script>\r\n</body>\r\n</html>";
+    exit;
+  }
+?>
+
+  <h3>Poker Login</h3>
+  <form method="post">
+    <table>
+      <tr>
+        <td>Player Name:</td>
+        <td><input type="text" name="Player"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="Password"></td>
+      </tr>
+      <tr>
+        <th colspan="2"><input type="submit" name="Login" value="Login"></th>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
